@@ -1,0 +1,15 @@
+{
+  "name": "java_tutorial_docs",
+  "version": "1.0.0",
+  "description": "Java Docs with Tutorials",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "author": "Ashwin Dinesh",
+  "license": "ISC",
+  "homepage": "https://ashwin-mavila.github.io/javatutorialdocs",
+  "dependencies": {
+    "gh-pages": "^2.0.1"
+  }
+}
