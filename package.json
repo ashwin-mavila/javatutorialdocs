@@ -8,6 +8,10 @@
   },
   "author": "Ashwin Dinesh",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ashwin-mavila/javatutorialdocs.git"
+  },
   "homepage": "https://ashwin-mavila.github.io/javatutorialdocs",
   "dependencies": {
     "gh-pages": "^2.0.1"
