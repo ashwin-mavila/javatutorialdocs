@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" href="../styles/main.css">
+        <title>Java</title>
+    </head>
+    <body>
+        <h1>Collections Rotate</h1>
+
+        <p>Rotate method moves all the objects 'n' indexes forward in a collection.</p>
+
+        <p><b>Sample Program:</b></p>
+        <pre>
+            import java.util.ArrayList;
+            import java.util.Collections;
+            import java.util.List;
+
+            public class RotateDemo {
+                public static void main(String[] args) {
+                    List<Integer> myList = new ArrayList<>();
+                    myList.add(1);
+                    myList.add(2);
+                    myList.add(3);
+                    myList.add(4);
+                    myList.add(5);
+                    System.out.println(myList);
+
+                    Collections.rotate(myList, 2);
+                    System.out.println(myList);
+                }
+            }
+        </pre>
+
+        <p><b>Output:</b></p>
+        <pre>
+            [1, 2, 3, 4, 5]
+            [4, 5, 1, 2, 3]
+        </pre>
+    </body>
+</html>
