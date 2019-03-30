@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" href="../styles/main.css">
+        <title>Java</title>
+    </head>
+    <body>
+        <h1>Collections SynchronizedMap</h1>
+
+        <p>Synchronized Map synchronizes map operations making HashMaps thread-safe.</p>
+
+        <p>Its performance is not as good as ConcurrentHashMap. Hence it is recommended to use ConcurrentHashMap instead of SynchronizedMap or HashTable.</p>
+
+        <p><b>Sample Program:</b></p>
+        <pre>
+            import java.util.Collections;
+            import java.util.HashMap;
+            import java.util.Map;
+
+            public class SynchronizedMapDemo {
+                public static void main(String[] args) {
+                    HashMap<Integer, String> map = new HashMap<>();
+            
+                    Map<Integer, String> syncMap = Collections.synchronizedMap(map);
+            
+                    syncMap.put(1, "One");
+                    syncMap.put(2, "Two");
+                    syncMap.put(3, "Three");
+            
+                    System.out.println("map[1]: " + syncMap.get(1));
+                    System.out.println("map: " + syncMap);
+                }
+            }
+        </pre>
+
+        <p><b>Output:</b></p>
+        <pre>
+            map[1]: One
+            map: {1=One, 2=Two, 3=Three}
+        </pre>
+    </body>
+</html>
