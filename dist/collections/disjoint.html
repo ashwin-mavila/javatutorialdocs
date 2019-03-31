@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" href="../styles/main.css">
+        <title>Java</title>
+    </head>
+    <body>
+        <h1>Collections Disjoint</h1>
+
+        <p>Disjoint method returns true if two given collections have no elements in common, else false.</p>
+
+        <p><b>Syntax:</b></p>
+        <pre>
+            public static boolean disjoint(Collection<?> c1, Collection<?> c2)
+        </pre>
+
+        <p><b>Throws</b></p>
+        <ol>
+            <li>NullPointerException: If either collection is null.</li>
+            <li>NullPointerException: If one collection contains a null element and null is not an eligible element for the other collection.</li>
+            <li>ClassCastException: If one collection contains an element that is of a type which is ineligible for the other collection.</li>
+        </ol>
+
+        <p><b>Sample Program:</b></p>
+        <pre>
+            import java.util.ArrayList;
+            import java.util.Collections;
+            import java.util.List;
+
+            public class DisjointDemo {
+                public static void main(String[] args) {
+                    List<String> list1 = new ArrayList<>();
+                    list1.add("one");
+                    list1.add("two");
+                    list1.add("three");
+
+                    List<String> list2 = new ArrayList<>();
+                    list2.add("ten");
+                    list2.add("twenty");
+                    list2.add("thirty");
+
+                    System.out.println("disjoint lists: " + Collections.disjoint(list1, list2));
+                }
+            }
+        </pre>
+
+        <p><b>Output:</b></p>
+        <pre>
+            disjoint lists: true
+        </pre>
+    </body>
+</html>
