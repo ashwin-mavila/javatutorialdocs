@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" href="../styles/main.css">
+        <title>Java Collections</title>
+    </head>
+    <body>
+        <h1>Collections Reverse Order</h1>
+
+        <p>Returns a comparator that imposes the reverse of natural ordering on a collection of objects.</p>
+
+        <p><b>Sample Program 1: Collections.sort(List<Object> list, Comparator c)</b></p>
+        <pre>
+            import java.util.ArrayList;
+            import java.util.Collections;
+            import java.util.List;
+            
+            public class ReverseOrder {
+                public static void main(String[] args) {
+                    List<Integer> list = new ArrayList<Integer>();
+                    list.add(30);
+                    list.add(20);
+                    list.add(10);
+                    list.add(40);
+                    list.add(50);
+            
+                    Collections.sort(list, Collections.reverseOrder());
+            
+                    System.out.println(list);
+                }
+            }
+        </pre>
+
+        <p><b>Output:</b></p>
+        <pre>
+            [50, 40, 30, 20, 10]
+        </pre>
+
+        You can even use this comparator with List sort or Arrays sort methods.
+
+        <pre>
+            list.sort(Collections.reverseOrder());
+
+            Arrays.sort(arr, Collections.reverseOrder());
+        </pre>
+
+        <p><b>Sample Program 2: Reverse Custom Comparator</b></p>
+        <pre>
+            import java.util.ArrayList;
+            import java.util.Collections;
+            import java.util.Comparator;
+            import java.util.List;
+
+            class Student {
+                int rollNo;
+                String name;
+            
+                Student(int rollNo, String name) {
+                    this.rollNo = rollNo;
+                    this.name = name;
+                }
+            
+                @Override
+                public String toString() {
+                    return this.rollNo + ". " + this.name;
+                }
+            }
+            
+            class SortByRollNo implements Comparator<Student> {
+                @Override
+                public int compare(Student o1, Student o2) {
+                    return o1.rollNo - o2.rollNo;
+                }
+            }
+
+            public class ReverseOrder {
+                public static void main(String[] args) {
+                    List<Student> list = new ArrayList<>();
+                    list.add(new Student(2, "Bob"));
+                    list.add(new Student(1, "Alice"));
+                    list.add(new Student(3, "Clara"));
+                    list.add(new Student(5, "Erik"));
+                    list.add(new Student(4, "Daniel"));
+            
+                    Collections.sort(list, Collections.reverseOrder(new SortByRollNo()));
+            
+                    for (Student s : list) {
+                        System.out.println(s);
+                    }
+                }
+            }            
+        </pre>
+
+        <p><b>Output:</b></p>
+        <pre>
+            5. Erik
+            4. Daniel
+            3. Clara
+            2. Bob
+            1. Alice
+        </pre>
+    </body>
+</html>

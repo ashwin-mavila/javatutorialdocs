@@ -8,30 +8,35 @@
         <title>Java Collections</title>
     </head>
     <body>
-        <h1>Collections N Copies</h1>
+        <h1>Collections Reverse</h1>
 
-        <p>The role of Collections.nCopies() is to return an immutable list (CopiesList) which contains n copies of given object.</p>
-
-        <p>Throws IllegalArgumentException if value of number is less than 0.</p>
+        <p>Simply reverses the order of objects in the given list.</p>
 
         <p><b>Sample Program:</b></p>
         <pre>
+            import java.util.ArrayList;
             import java.util.Collections;
             import java.util.List;
-
-            public class NCopies {
+            
+            public class Reverse {
                 public static void main(String[] args) {
-                    int n = 3;
-                    Object obj = "Java";
-                    List ncopiesList = Collections.nCopies(n, obj);
-                    System.out.println(ncopiesList);
+                    List<Integer> list = new ArrayList<Integer>();
+                    list.add(3);
+                    list.add(2);
+                    list.add(4);
+                    list.add(1);
+                    list.add(5);
+            
+                    Collections.reverse(list);
+            
+                    System.out.println(list);
                 }
             }
         </pre>
 
         <p><b>Output:</b></p>
         <pre>
-            [Java, Java, Java]
+            [5, 1, 4, 2, 3]
         </pre>
     </body>
-</html>    
+</html>
